@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .left-half {
+            width: 50%;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+        .right-half {
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 55px; /* Tablo ile gri arka plan arasındaki boşluğu ayarlar */
+}
+
+.right-half-container h3 {
+    background-color: #f2f2f2;
+    margin-top: -20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+        .button-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        #save-button, .blue-button {
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            height: 400px;
+            border-spacing: 200px; /* Hücre çizgileri arasındaki boşluğu kaldırır */
+            
+        }
+
+        .user-table th, .user-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        .user-table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .right-corner {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+        .form-item {
+           margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-half">
+            <div class="button-container">
+                <button class="blue-button">+ New User</button>
+                <label class="checkbox-label">
+                    <input class="checkbox" type="checkbox">
+                    Hide Disabled User
+                </label>
+            </div>
+
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Enabled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>AdminUser</td>
+                        <td>admin@piworks.net</td>
+                        <td>✔ true</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Test User</td>
+                        <td>testuser@piworks.net</td>
+                        <td>✔ true</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="right-half">
+            <div class="right-half-container">
+                <h3 style="font-size: 24px;">New User</h3>
+                <div class="form-item">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username">
+                </div>
+                <div class="form-item">
+                    <label for="displayName">Display Name:</label>
+                    <input type="text" id="displayName">
+                </div>
+                <div class="form-item">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone">
+                </div>
+                <div class="form-item">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="form-item">
+                    <label for="userRoles">User Roles:</label>
+                    <input type="text" id="userRoles">
+                </div>
+                <div class="form-item">
+                    <label for="enabled">Enabled:</label>
+                    <input type="checkbox" id="enabled">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="save-button" class="right-corner">Save User</button>
+
+</body>
+
+</html>
